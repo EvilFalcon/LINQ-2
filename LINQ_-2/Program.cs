@@ -19,12 +19,10 @@ namespace LINQ__2
                 new Criminal("Матео Мессина Денаро", "Антиправительственное"),
                 new Criminal("Джозеф Кони", "Разбой"),
             };
-            
-        
-            showDrowInfo.ShowInfo(criminals);
-            
-            criminals = criminals.Where(criminal => criminal.Article !=articleAmnesty ).ToList();
 
+            showDrowInfo.ShowInfo(criminals);
+
+            criminals = criminals.Where(criminal => criminal.Article != articleAmnesty).ToList();
 
             showDrowInfo.ShowInfo(criminals);
             Console.ReadKey();
