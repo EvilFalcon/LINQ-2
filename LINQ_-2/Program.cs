@@ -6,9 +6,11 @@ namespace LINQ__2
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             DrowInfo showDrowInfo = new DrowInfo();
+
+            string articleAmnesty = "Антиправительственное";
 
             List<Criminal> criminals = new List<Criminal>
             {
@@ -17,12 +19,14 @@ namespace LINQ__2
                 new Criminal("Матео Мессина Денаро", "Антиправительственное"),
                 new Criminal("Джозеф Кони", "Разбой"),
             };
+            
+        
+            showDrowInfo.ShowInfo(criminals);
+            
+            criminals = criminals.Where(criminal => criminal.Article !=articleAmnesty ).ToList();
 
-            var searchResults = criminals.Where(criminal => criminal.Article != "Антиправительственное");
 
             showDrowInfo.ShowInfo(criminals);
-
-            showDrowInfo.ShowInfo(searchResults);
             Console.ReadKey();
         }
     }
